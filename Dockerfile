@@ -1,4 +1,4 @@
 FROM python
 WORKDIR /app
-RUN pip install pandas
+RUN pip install pandas Flask
 ENTRYPOINT ["python"]

@@ -1,6 +1,6 @@
 
 
-from winners import parse_csv,read_csv,EmptyDataframeException
+from funktioner import parse_csv,read_csv,EmptyDataframeException
 
 import unittest
 import pandas as pd
@@ -12,8 +12,8 @@ class Tests(unittest.TestCase):
     
     #Test that the percentage output works as expected:
     def test_increment(self):
-        self.assertEqual(float(parse_csv(Tests.path+"TestIncrement.csv")['percent'][0][:-1]),0.23)
-        self.assertEqual(float(parse_csv(Tests.path+"TestIncrement.csv")['percent'][1][:-1]),-1.63)
+        self.assertEqual(float(parse_csv(read_csv(Tests.path+"TestIncrement.csv"))['percent'][0][:-1]),0.23)
+        self.assertEqual(float(parse_csv(read_csv(Tests.path+"TestIncrement.csv"))['percent'][1][:-1]),-1.63)
 
     #Test that correct exception is thrown when a csv-file with no values is passed:
     def test_empty_dataframe(self):
